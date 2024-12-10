@@ -103,6 +103,8 @@ func (e ErrorCode) CanRecover() bool {
 	switch e {
 	case EInvalidGrant:
 		return true
+	case EAccessDenied:
+		return true
 	default:
 		return false
 	}
@@ -112,8 +114,6 @@ func (e ErrorCode) CanRecover() bool {
 func (e ErrorCode) CanAutoRetry() bool {
 	switch e {
 	case EBadArgument:
-		return false
-	case EAccessDenied:
 		return false
 	case EUserAccountLocked:
 		return false

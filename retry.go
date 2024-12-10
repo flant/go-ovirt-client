@@ -497,6 +497,9 @@ func (r reconnectStrategy) Recover(err error) error {
 	if HasErrorCode(err, EInvalidGrant) {
 		return r.client.Reconnect()
 	}
+	if HasErrorCode(err, EAccessDenied) {
+		return r.client.Reconnect()
+	}
 	return err
 }
 
