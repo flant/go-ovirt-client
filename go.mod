@@ -8,3 +8,5 @@ require (
 	github.com/ovirt/go-ovirt-client-log/v3 v3.0.0
 	github.com/stretchr/testify v1.7.0 // indirect
 )
+
+replace github.com/ovirt/go-ovirt v0.0.0-20220427092237-114c47f2835c => fox.flant.com/deckhouse/cloud-providers/ovirt/go-ovirt v0.0.1-flant
